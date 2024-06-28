@@ -29,6 +29,11 @@
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+
+
+    <script src="{{asset('dist/js/axios.min.js')}}"></script>
+    <script src="{{asset('dist/js/user.js')}}"></script>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

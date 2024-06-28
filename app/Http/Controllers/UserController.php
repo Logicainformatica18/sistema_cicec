@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
@@ -23,7 +23,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+      $user = User::all();
+
+      return view('usertable',compact('user'));
     }
 
     /**
@@ -31,7 +33,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        //VALIDAMOS LA EXISTENCIA DEL USUARIO
+        $usuario = User::where("email","=",$request->email)->first();
+    if ($usuario) {
+        return "usuario existente";
+
+    }
+    elseif ($usuario==""){
+        $user = New User();
+        $user->name= $request->name;
+        $user->email= $request->email;
+        $user->password= Hash::make($request->password);
+        $user->save();
+        
+        return $user->id;
+    }
+      
+
+
     }
 
     /**
@@ -45,24 +65,33 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $request)
     {
-        //
+        $user= User::find($request->id);
+        return $user;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $user= User::find($request->id);
+        $user->name= $request->name;
+        $user->email= $request->email;
+       // $user->password= Hash::make($request->password);
+        $user->save();
+        
+        return "cambiado";
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        $user= User::find($request->id);
+        $user->delete();
+        return redirect()->back();
     }
 }

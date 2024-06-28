@@ -3,7 +3,7 @@
 </button>
 <p></p>
 @role('admin')
-hola admin
+    hola admin
 @endrole
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -17,15 +17,27 @@ hola admin
                 </button>
             </div>
             <div class="modal-body">
-                
 
-            
-                    <form action="" method="POST"id="user">
-                        @csrf
-                        <input type="text" name="name">
-                        <button class="btn btn-primary" onclick="userStore()">
-                        </button>
-                    </form>
+
+
+                <form action="" method="post" role="form" id="user" name="user">
+                 <input type="hidden" name="id">
+                    {{ csrf_field() }}
+                    Nombres
+                    <input type="text" name="name" class="form-control">
+                    Email
+                    <input type="text" name="email" class="form-control">
+                    Contraseña
+
+                    <input type="text" name="password" class="form-control">
+                    <p></p>
+                    <button class="btn btn-primary" onclick="userStore()">
+                        Guardar
+                    </button>
+                    <button class="btn btn-primary" onclick="userUpdate()">
+                        Modificar
+                    </button>
+                </form>
 
 
 
@@ -44,35 +56,6 @@ hola admin
     </div>
 </div>
 
-<table border="1">
-    <thead>
-        <th>opciones</th>
-        <th>Id </th>
-        <th>name </th>
-        <th>email </th>
-
-    </thead>
-
-
-    @foreach ($user as $users)
-        <tr>
-            <td>
-                <a href="">Editar</a>
-                <a href="">Borrar</a>
-            </td>
-            <td>
-                {{ $users->id }}
-
-            </td>
-
-            <td>
-                {{ $users->name }}
-
-            </td>
-            <td>
-                {{ $users->email }}
-
-            </td>
-        </tr>
-    @endforeach
-</table>
+<div id="mycontent">
+    @include('usertable')
+</div>
