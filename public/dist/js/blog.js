@@ -1,8 +1,8 @@
-function userStore() {
-    var formData = new FormData(document.getElementById("user"));
+function blogStore() {
+    var formData = new FormData(document.getElementById("blog"));
     axios({
             method: 'post',
-            url: 'userStore',
+            url: 'blogStore',
             data: formData,
             headers: {
                 'Content-Type': 'multipart/form-data'
@@ -21,13 +21,13 @@ function userStore() {
         });
 
 }
-function userDestroy(id) {
+function blogDestroy(id) {
     if (confirm("Esta seguro de Eliminar?")) {
-        var formData = new FormData(document.getElementById("user"));
+        var formData = new FormData(document.getElementById("blog"));
         formData.append("id", id);
         axios({
                 method: 'post',
-                url: "userDestroy",
+                url: "blogDestroy",
                 data: formData,
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -50,12 +50,12 @@ function userDestroy(id) {
     }
 }
 
-function userEdit(id) {
-    var formData = new FormData(document.getElementById("user"));
+function blogEdit(id) {
+    var formData = new FormData(document.getElementById("blog"));
     formData.append("id", id);
     axios({
             method: 'post',
-            url: 'userEdit',
+            url: 'blogEdit',
             data: formData,
             headers: {
                 'Content-Type': 'multipart/form-data'
@@ -63,9 +63,9 @@ function userEdit(id) {
         })
         .then(function(response) {
            
-            user.id.value = response.data["id"];
-            user.name.value = response.data["name"];
-            user.email.value = response.data["email"];
+            blog.id.value = response.data["id"];
+            blog.name.value = response.data["name"];
+            blog.email.value = response.data["email"];
 
 
 
@@ -78,11 +78,11 @@ function userEdit(id) {
 }
 
 
-function userUpdate() {
-    var formData = new FormData(document.getElementById("user"));
+function blogUpdate() {
+    var formData = new FormData(document.getElementById("blog"));
     axios({
             method: 'post',
-            url: 'userUpdate',
+            url: 'blogUpdate',
             data: formData,
             headers: {
                 'Content-Type': 'multipart/form-data'
@@ -100,19 +100,4 @@ function userUpdate() {
             console.log(response);
         });
 
-}
-
-
-
-function New() {
-    document.getElementById("create").disabled = false;
-  //  document.getElementById("new").disabled = false;
-    document.getElementById("update").disabled = true;
-    // form.id.value = "";
-}
-
-function Up() {
-    document.getElementById("create").disabled = true;
-//    form.new.disabled = true;
-    document.getElementById("update").disabled  = false;
 }

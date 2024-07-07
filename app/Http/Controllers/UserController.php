@@ -11,11 +11,8 @@ class UserController extends Controller
      */
     public function index()
     {
-      // Obtener datos de forma matricial (bidimensional)
-      $user = User::all();
-      //obtener datos de forma unidimensional
-    //  $user = User::first();
-      return view('template',compact('user'));
+        $user = User::orderBy('id','DESC')->get();
+        return view('user', compact('user'));
     }
 
     /**
@@ -23,9 +20,8 @@ class UserController extends Controller
      */
     public function create()
     {
-      $user = User::all();
-
-      return view('usertable',compact('user'));
+        $user = User::orderBy('id','DESC')->get();
+        return view('usertable', compact('user'));
     }
 
     /**
@@ -34,24 +30,23 @@ class UserController extends Controller
     public function store(Request $request)
     {
         
-        //VALIDAMOS LA EXISTENCIA DEL USUARIO
-        $usuario = User::where("email","=",$request->email)->first();
-    if ($usuario) {
-        return "usuario existente";
+    //     //VALIDAMOS LA EXISTENCIA DEL USUARIO
+        $usuario = User::where("email","=",$request->email)->count();
+    if ($usuario==1) {
+        return;
 
     }
-    elseif ($usuario==""){
+    elseif ($usuario==0){
         $user = New User();
         $user->name= $request->name;
         $user->email= $request->email;
         $user->password= Hash::make($request->password);
         $user->save();
         
-        return $user->id;
+       
     }
       
-
-
+    return $this->create();
     }
 
     /**
@@ -82,7 +77,7 @@ class UserController extends Controller
        // $user->password= Hash::make($request->password);
         $user->save();
         
-        return "cambiado";
+        return $this->create();
     }
 
     /**
@@ -92,6 +87,6 @@ class UserController extends Controller
     {
         $user= User::find($request->id);
         $user->delete();
-        return redirect()->back();
+        return $this->create();
     }
 }

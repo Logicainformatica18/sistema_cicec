@@ -1,4 +1,6 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+@extends("template")
+@section('content')
+<button type="button"onclick="New();$('#user')[0].reset()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Agregar
 </button>
 <p></p>
@@ -19,8 +21,7 @@
             <div class="modal-body">
 
 
-
-                <form action="" method="post" role="form" id="user" name="user">
+                <form action=""method="post" role="form" id="user" name="form">
                  <input type="hidden" name="id">
                     {{ csrf_field() }}
                     Nombres
@@ -31,24 +32,20 @@
 
                     <input type="text" name="password" class="form-control">
                     <p></p>
-                    <button class="btn btn-primary" onclick="userStore()">
-                        Guardar
-                    </button>
-                    <button class="btn btn-primary" onclick="userUpdate()">
-                        Modificar
-                    </button>
-                </form>
+                  
+            
 
 
 
             </div>
             <div class="modal-footer">
-                {{-- <input type="button" value="Nuevo" class="btn btn-warning"
-                    onclick="New();$('#user')[0].reset(); user.fotografia.src='https://via.placeholder.com/150';"
-                    name="new"> --}}
-                {{-- <input type="button" value="Guardar" class="btn btn-success" onclick="userStore()" id="create">
-                <input type="button" value="Modificar" class="btn btn-danger" onclick="userUpdate();"
-                    id="update"> --}}
+                <button type="button"  class="btn btn-primary"name="btnguardar"id="create" onclick="userStore()">
+                    Guardar
+                </button>
+                <button  type="button" class="btn btn-primary"name="btnmodificar"id="update" onclick="userUpdate()">
+                    Modificar
+                </button>
+             
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </form>
             </div>
@@ -59,3 +56,4 @@
 <div id="mycontent">
     @include('usertable')
 </div>
+@endsection

@@ -7,7 +7,6 @@
     <title>AdminLTE 3 | Dashboard</title>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="user.js"></script>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -31,9 +30,9 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 
 
-    <script src="{{asset('dist/js/axios.min.js')}}"></script>
-    <script src="{{asset('dist/js/user.js')}}"></script>
-
+    <script src="{{ asset('dist/js/axios.min.js') }}"></script>
+    <script src="{{ asset('dist/js/user.js') }}"></script>
+    <script src="{{ asset('dist/js/blog.js') }}"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -245,12 +244,12 @@
                                         <p>Módulos</p>
                                     </a>
                                 </li>
-                                {{-- <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li> --}}
+                                <li class="nav-item">
+                                    <a href="{{ route('blog.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Blog</p>
+                                    </a>
+                                </li>
                                 {{-- <li class="nav-item">
                 <a href="./index3.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -259,25 +258,25 @@
               </li> --}}
                             </ul>
                         </li>
-                       
-                    
-                      
-                  
-                     
-                      
-                   
-                      
-                    
-                     
-                     
-                     
-                       
-                       
-                    
-                      
-                   
-                      
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -307,7 +306,7 @@
 
             <!-- Main content -->
             <section class="content">
-               @include("user")
+                @yield('content')
             </section>
             <!-- /.content -->
         </div>
@@ -358,10 +357,10 @@
     <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
+    {{-- <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard.js"></script>
+    <script src="dist/js/pages/dashboard.js"></script> --}}
 </body>
 
 </html>

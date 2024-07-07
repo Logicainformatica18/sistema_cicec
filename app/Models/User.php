@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+
+use App\Models\Blog;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -43,5 +47,12 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }  
+    //ESTA RELACION ES DE 1 A MUCHOS
+    // UN USUARIO PODRA CREAR UNO A MUCHOS BLOGS
+    //establacemos la relacion de que un usuario esta relacionado con uno o muchos blogs
+    public function blogs(): HasMany
+    {
+        return $this->hasMany(Blog::class);
     }
 }
