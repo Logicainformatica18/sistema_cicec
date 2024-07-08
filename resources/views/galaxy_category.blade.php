@@ -7,7 +7,7 @@
         <title>DANGER</title>
 
         <!---custom css link-->
-        <link rel="stylesheet" type="text/css" href="galaxy/style.css">
+        <link rel="stylesheet" type="text/css" href="../galaxy/style.css">
         <!---boxicons link-->
         <link rel="stylesheet"
         href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -27,10 +27,10 @@
         <a href="#" class="logo">ACTIVE<span>GALAxy</span></a>
 
         <ul class="navbar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#artículos/Flashcards">Artículos/Flashcards</a></li> 
-            <li><a href="#clubes_ayacucho">Clubes_Ayacucho</a></li> 
-            <li><a href="#voluntariados">Voluntariados</a></li> 
+            <li><a href="../#home">Home</a></li>
+            <li><a href="../#artículos/Flashcards">Artículos/Flashcards</a></li> 
+            <li><a href="../#clubes_ayacucho">Clubes_Ayacucho</a></li> 
+            <li><a href="../#voluntariados">Voluntariados</a></li> 
         </ul>
 
         <div class="h-right">
@@ -42,35 +42,6 @@
         </div>
     </header>
 
-    <!---home section design--> 
-    <section class="home" id="home">
-            <div class="home-text">
-                <h5>Libertad</h5>
-                <h1>Universo: viviendo en un<br>un país tercermundista</h1>
-                <p>Art. 2, inciso 4 de la constitución política del Perú: 
-                A las libertades de información, opinión, expresión y 
-                difusión del pensamiento mediante la palabra oral o escrita 
-                o la imagen, por cualquier medio de comunicación social, sin 
-                previa autorización ni censura ni impedimento algunos, bajo 
-                las responsabilidades de ley. <br>(...) Los derechos de informar 
-                y opinar comprenden los de fundar medios
-                de comunicación.</p>
-                <a href="#información" class="btn">¿Qué puedo DESARROLLAR?</a>
-            </div>
-    </section>
-
-    <!---holiday section design--> 
-    <section class="holiday">
-        <div class="holiday-img">
-                <img src="galaxy/img/h1.png">
-        </div>
-            
-        <div class="holiday-text" id="información">
-            <h5>Información</h5>
-            <h2>Sobre Danger y Active Galaxy</h2>
-            <p>En este sitio web, podrás subir tus artículos de opinión o una crítica/comentario más corta a través de FLlashcards. Por otro lado, hallarás un apartado para visualizar información sobre los Clubs disponibles en Ayacucho, los requisitos básicos y el contacto de la organización para que puedas optimizar tu tiempo. ¡AYUDA!, por medio de la cita ¡EMERGENCIA!, podrás hacer una transmisión en vivo cuando te encuentres en peligro o lo sientas así; la cual estará vinculada a tus redes sociales y las comisarias.</p>
-        </div>
-    </section>
     
     <!--- feature section design--> 
     <section class="feature" id="artículos/Flashcards">
@@ -78,7 +49,7 @@
             <div class="row">
                 <a target="_blank"  href="{{url('categoria/ambiente')}}" style="color:white">
                     <div class="row-img"> 
-                        <img src="galaxy/img/nap1.jpg">
+                        <img src="../galaxy/img/nap1.jpg">
                     </div>
                     <h4>Medio AMBIENTE</h4>
                 </a>
@@ -88,7 +59,7 @@
             <div class="row">
                 <a target="_blank"  href="{{url('categoria/servicios')}}" style="color:white">
                 <div class="row-img"> 
-                    <img src="galaxy/img/nap2.jpg">
+                    <img src="../galaxy/img/nap2.jpg">
                 </div>
                 <h4>ADM. y servicios 
                         públicos
@@ -99,7 +70,7 @@
             <div class="row">
                 <a target="_blank"  href="{{url('categoria/politica')}}" style="color:white">
                 <div class="row-img"> 
-                    <img src="galaxy/img/nap3.jpg">
+                    <img src="../galaxy/img/nap3.jpg">
                 </div>
                 <h4>PolíTICA</h4>
                 </a>
@@ -108,7 +79,7 @@
             <div class="row">
                 <a target="_blank"  href="{{url('categoria/ie')}}" style="color:white">
                 <div class="row-img"> 
-                    <img src="galaxy/img/nap4.jpg">
+                    <img src="../galaxy/img/nap4.jpg">
                 </div>
                 <h4>IE</h4>
                 </a>
@@ -116,7 +87,7 @@
             <div class="row">
                 <a target="_blank" href="{{url('categoria/sugerencia')}}" style="color:white">
                 <div class="row-img"> 
-                    <img src="galaxy/img/nap5.jpg">
+                    <img src="../galaxy/img/nap5.jpg">
                 </div>
                 <h4>Sugerencias</h4>
                 </a>
@@ -126,55 +97,38 @@
     </section>
 
     <!---culture section design-->
-    <section class="Culture" id="clubes_ayacucho">
-        <div class="Culture-text">
-            <h5>CLUBES AYACUCHO</h5>
-            <h2>Habilidades sociales e intelectuales en práctica</h2>
-            <p>Promovamos la descentralización a través de la accesibilidad a clubes de Literatura, Matemática, Inglés, Ajedrez, etc.</p> 
-            <a href="#" class="btn">Ver: Clubes en Ayacucho</a>
-        </div> 
-
-        <div class="Culture-img">
-            <img src="galaxy/img/c1.png"> 
+    <div class="center-text">
+        <p></p>
+        <h1>PUBLICACIONES</span></h1>
+        <div class="center-btn">
+            <a href="{{ url('/publicacion') }}"target="_blank" class="btn">Crear publicacion</a>
         </div>
-    </section>
-    
-    <!---tour section design--> 
+    </div>
     <section class="tour" id="voluntariados">
         <div class="center-text">
-            <h2>VOLUNTA<span>riados</span></h2>
+            <p></p>
+            <h2>Medio Ambiente</span></h2>
+
         </div>
+
 
         <div class="tour-content">
-            <div class="box">
-                <img src="galaxy/img/V.jpg"> 
-            </div>
+            @foreach ($posts as $item)
+                <a href="posts/{{ $item->id }}" target="_blank">
+                    <div class="box">
+                        {{-- <h3><b>{{$item->title}}</b>  </h3>  --}}
+                        <img src="{{ 'imageusers/' . $item->photo }}"style="width:200px">
+                        {{-- <span>{{$item->description}} </span> --}}
+                    </div>
+                </a>
+            @endforeach
 
-            <div class="box">
-                <img src="galaxy/img/V2.jpg"> 
-            </div>
 
-            <div class="box">
-                <img src="galaxy/img/V3.jpg"> 
-            </div>
-
-            <div class="box">
-                <img src="galaxy/img/V4.jpg"> 
-            </div>
-
-            <div class="box">
-                <img src="galaxy/img/V5.jpg"> 
-            </div>
-
-            <div class="box">
-                <img src="galaxy/img/V6.jpg"> 
-            </div>
         </div>
-
-        <div class="center-btn">
-            <a href="#" class="btn">¿Qué ORGANIZACIONES hay?</a>
-            </div> 
     </section>
+
+    
+
 
     <!---newsletter section design--> 
     <section class="newsletter">
@@ -211,6 +165,6 @@
     </section>
 
     <!---custom js file link-->
-    <script src="galaxy/js/script.js"></script>
+    <script src="../galaxy/js/script.js"></script>
 </body>
 </html>

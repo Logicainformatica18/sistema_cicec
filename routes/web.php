@@ -30,6 +30,7 @@ Route::resource("publicacion", App\Http\Controllers\PostController::class);
 Route::post('postStore',[App\Http\Controllers\PostController::class, 'store']);
 Route::post('postDestroy',[App\Http\Controllers\PostController::class, 'destroy']);
 Route::get('posts/{id}',[App\Http\Controllers\PostController::class, 'report']);
+Route::get('categoria/{category}',[App\Http\Controllers\PostController::class, 'category']);
 // Route::post('blogStore',[App\Http\Controllers\BlogController::class, 'store']);
 // Route::post('blogDestroy',[App\Http\Controllers\BlogController::class, 'destroy']);
 // Route::post('blogEdit',[App\Http\Controllers\BlogController::class, 'edit']);

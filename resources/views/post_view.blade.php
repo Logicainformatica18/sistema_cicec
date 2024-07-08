@@ -28,10 +28,10 @@
         <a href="#" class="logo">Active<span>Galaxy</span></a>
 
         <ul class="navbar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#artículos/Flashcards">Artículos/Flashcards</a></li>
-            <li><a href="#clubes_ayacucho">Clubes_Ayacucho</a></li>
-            <li><a href="#voluntariados">Voluntariados</a></li>
+            <li><a href="../#home">Home</a></li>
+            <li><a href="../#artículos/Flashcards">Artículos/Flashcards</a></li>
+            <li><a href="../#clubes_ayacucho">Clubes_Ayacucho</a></li>
+            <li><a href="../#voluntariados">Voluntariados</a></li>
         </ul>
 
         <div class="h-right">
@@ -82,6 +82,8 @@
 
         </div>
     </section>
+
+
     <div class="center-text">
         <p> &nbsp;
             &nbsp;

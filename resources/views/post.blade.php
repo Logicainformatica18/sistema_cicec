@@ -48,9 +48,10 @@
             Categoría
             <select name="category" class="form-control">
                 <option value="ambiente">Medio Ambiente</option>
-                <option value="servicios_publicos">Servicios Públicos</option>
+                <option value="servicios">Servicios Públicos</option>
                 <option value="politica">Política</option>
                 <option value="ie">IE</option>
+                <option value="sugerencia">Sugerencias</option>
             </select>
             <input type="hidden" name="id" id="id">
             <p></p>
