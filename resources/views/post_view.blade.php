@@ -42,42 +42,54 @@
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
     </header>
+    <!--- feature section design--> 
     <section class="feature" id="artículos/Flashcards">
-        <div class="feature-content">
+        <div class="feature-content"> 
             <div class="row">
-                <div class="row-img">
-                    <img src="{{ asset('galaxy/img/nap1.jpg') }}">
-                </div>
-                <h4>Medio AMBIENTE</h4>
+                <a target="_blank"  href="{{url('categoria/ambiente')}}" style="color:white">
+                    <div class="row-img"> 
+                        <img src="../galaxy/img/nap1.jpg">
+                    </div>
+                    <h4>Medio AMBIENTE</h4>
+                </a>
+                
             </div>
 
             <div class="row">
-                <div class="row-img">
-                    <img src="{{ asset('galaxy/img/nap2.jpg') }}">
+                <a target="_blank"  href="{{url('categoria/servicios')}}" style="color:white">
+                <div class="row-img"> 
+                    <img src="../galaxy/img/nap2.jpg">
                 </div>
-                <h4>ADM. y servicios
-                    públicos
+                <h4>ADM. y servicios 
+                        públicos
                 </h4>
+                </a>
             </div>
 
             <div class="row">
-                <div class="row-img">
-                    <img src="{{ asset('galaxy/img/nap3.jpg') }}">
+                <a target="_blank"  href="{{url('categoria/politica')}}" style="color:white">
+                <div class="row-img"> 
+                    <img src="../galaxy/img/nap3.jpg">
                 </div>
                 <h4>PolíTICA</h4>
+                </a>
             </div>
 
             <div class="row">
-                <div class="row-img">
-                    <img src="{{ asset('galaxy/img/nap4.jpg') }}">
+                <a target="_blank"  href="{{url('categoria/ie')}}" style="color:white">
+                <div class="row-img"> 
+                    <img src="../galaxy/img/nap4.jpg">
                 </div>
                 <h4>IE</h4>
+                </a>
             </div>
             <div class="row">
-                <div class="row-img">
-                    <img src="{{ asset('galaxy/img/nap5.jpg') }}">
+                <a target="_blank" href="{{url('categoria/sugerencia')}}" style="color:white">
+                <div class="row-img"> 
+                    <img src="../galaxy/img/nap5.jpg">
                 </div>
                 <h4>Sugerencias</h4>
+                </a>
             </div>
 
         </div>
