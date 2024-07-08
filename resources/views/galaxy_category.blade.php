@@ -114,7 +114,7 @@
 
         <div class="tour-content">
             @foreach ($posts as $item)
-                <a href="posts/{{ $item->id }}" target="_blank">
+                <a href="../posts/{{ $item->id }}" target="_blank">
                     <div class="box">
                         {{-- <h3><b>{{$item->title}}</b>  </h3>  --}}
                         <img src="{{ '../imageusers/' . $item->photo }}"style="width:200px">
