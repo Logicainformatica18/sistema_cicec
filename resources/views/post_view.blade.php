@@ -1,183 +1,199 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Active Galaxy</title>
-    <!-- Bootstrap CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
-    <!-- summernote -->
-    <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DANGER</title>
 
+    <!---custom css link-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('galaxy/style.css') }}">
+    <!---boxicons link-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!---google fonts link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans: wght@300; 400; 500; 600; 700; 800&display=swap"
+        rel="stylesheet">
 
 </head>
 
-<body>
-    <p></p>
+<body style="font-family:Arial">
 
-    <div class="card card-primary card-outline container">
-        <div class="card-header">
-            <h1 class="card-title"><b>{{ $post->title }}</b> </h1>
-            <div class="card-tools">
-                <a href="#" class="btn btn-tool" title="Previous"><i class="fas fa-chevron-left"></i></a>
-                <a href="#" class="btn btn-tool" title="Next"><i class="fas fa-chevron-right"></i></a>
-            </div>
+    <!---header design-->
+    <header>
+        <a href="#" class="logo">Active<span>Galaxy</span></a>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#artículos/Flashcards">Artículos/Flashcards</a></li>
+            <li><a href="#clubes_ayacucho">Clubes_Ayacucho</a></li>
+            <li><a href="#voluntariados">Voluntariados</a></li>
+        </ul>
+
+        <div class="h-right">
+            <a href="#">¡EMERGENCIA!</a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-map-pin-add-fill"></i></a>
+            <div class="bx bx-menu" id="menu-icon"></div>
         </div>
-
-        <div class="card-body p-0">
-            <div class="mailbox-read-info">
-                <h5>Descripción : </h5>
-                <h6>{{ $post->description }}
-                    <span class="mailbox-read-time float-right">{{ $post->created_at }} </span>
-                </h6>
+    </header>
+    <section class="feature" id="artículos/Flashcards">
+        <div class="feature-content">
+            <div class="row">
+                <div class="row-img">
+                    <img src="{{ asset('galaxy/img/nap1.jpg') }}">
+                </div>
+                <h4>Medio AMBIENTE</h4>
             </div>
 
-         
-            <div class="mailbox-read-message">
-              <p></p>
-         
-              @php
+            <div class="row">
+                <div class="row-img">
+                    <img src="{{ asset('galaxy/img/nap2.jpg') }}">
+                </div>
+                <h4>ADM. y servicios
+                    públicos
+                </h4>
+            </div>
 
-              echo $post->post;
-          @endphp
-      
+            <div class="row">
+                <div class="row-img">
+                    <img src="{{ asset('galaxy/img/nap3.jpg') }}">
+                </div>
+                <h4>PolíTICA</h4>
+            </div>
 
+            <div class="row">
+                <div class="row-img">
+                    <img src="{{ asset('galaxy/img/nap4.jpg') }}">
+                </div>
+                <h4>IE</h4>
+            </div>
+            <div class="row">
+                <div class="row-img">
+                    <img src="{{ asset('galaxy/img/nap5.jpg') }}">
+                </div>
+                <h4>Sugerencias</h4>
             </div>
 
         </div>
-{{-- 
-        <div class="card-footer bg-white">
-            <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
-                <li>
-                    <span class="mailbox-attachment-icon"><i class="far fa-file-pdf"></i></span>
-                    <div class="mailbox-attachment-info">
-                        <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i>
-                            Sep2014-report.pdf</a>
-                        <span class="mailbox-attachment-size clearfix mt-1">
-                            <span>1,245 KB</span>
-                            <a href="#" class="btn btn-default btn-sm float-right"><i
-                                    class="fas fa-cloud-download-alt"></i></a>
-                        </span>
-                    </div>
-                </li>
-                <li>
-                    <span class="mailbox-attachment-icon"><i class="far fa-file-word"></i></span>
-                    <div class="mailbox-attachment-info">
-                        <a href="#" class="mailbox-attachment-name"><i class="fas fa-paperclip"></i> App
-                            Description.docx</a>
-                        <span class="mailbox-attachment-size clearfix mt-1">
-                            <span>1,245 KB</span>
-                            <a href="#" class="btn btn-default btn-sm float-right"><i
-                                    class="fas fa-cloud-download-alt"></i></a>
-                        </span>
-                    </div>
-                </li>
-                <li>
-                    <span class="mailbox-attachment-icon has-img"><img src="../../dist/img/photo1.png"
-                            alt="Attachment"></span>
-                    <div class="mailbox-attachment-info">
-                        <a href="#" class="mailbox-attachment-name"><i class="fas fa-camera"></i> photo1.png</a>
-                        <span class="mailbox-attachment-size clearfix mt-1">
-                            <span>2.67 MB</span>
-                            <a href="#" class="btn btn-default btn-sm float-right"><i
-                                    class="fas fa-cloud-download-alt"></i></a>
-                        </span>
-                    </div>
-                </li>
-                <li>
-                    <span class="mailbox-attachment-icon has-img"><img src="../../dist/img/photo2.png"
-                            alt="Attachment"></span>
-                    <div class="mailbox-attachment-info">
-                        <a href="#" class="mailbox-attachment-name"><i class="fas fa-camera"></i> photo2.png</a>
-                        <span class="mailbox-attachment-size clearfix mt-1">
-                            <span>1.9 MB</span>
-                            <a href="#" class="btn btn-default btn-sm float-right"><i
-                                    class="fas fa-cloud-download-alt"></i></a>
-                        </span>
-                    </div>
-                </li>
-            </ul>
-        </div> --}}
-
-        <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://https-activegalaxy-anthonycode-com.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+    <div class="center-text">
+        <p> &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+        </p>
+        <p></p>
+        <h2>{{$post->title}}</span></h2>
 
     </div>
 
+       <!---culture section design-->
+       <section class="tour" id="clubes_ayacucho">
+      
+
+@php
+
+        echo $post->post;
+    @endphp
+    
+       </section>
+   
 
 
-    <!-- jQuery -->
-    <script src="../plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
+
+    <div id="disqus_thread"></div>
     <script>
-        $.widget.bridge('uibutton', $.ui.button)
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+      /*
+      var disqus_config = function () {
+      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      */
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://https-activegalaxy-anthonycode-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
     </script>
-    <!-- Bootstrap 4 -->
-    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- ChartJS -->
-    <script src="../plugins/chart.js/Chart.min.js"></script>
-    <!-- Sparkline -->
-    <script src="../plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
-    <!-- daterangepicker -->
-    <script src="../plugins/moment/moment.min.js"></script>
-    <script src="../plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Summernote -->
-    <script src="../plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../dist/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../dist/js/demo.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="../dist/js/pages/dashboard.js"></script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    </div>
+</div>
 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!---newsletter section design-->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <div class="newsletter-text">
+                <h2>Extras</h2>
+                <p>¿List@ para explorar más?</p>
+            </div>
+
+            <form action="">
+                <input type="messages" placeholder="Envianos mensajitos al privado..." required>
+                <input type="submit" value="Enviar" class="btn">
+            </form>
+        </div>
+    </section>
+
+    <!--footer section design-->
+    <section class="footer">
+        <div class="footer-box">
+            <h3>Ayuda</h3>
+            <a href="#">Cel. 917 778 517</a>
+            <a href="#">E-mail: maythemia2020@gmail.com</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Redes sociales</h3>
+            <div class="social">
+                <a href="#"><i class="ri-instagram-fill"></i></a>
+                <a href="#"><i class="ri-whatsapp-fill"></i></a>
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+            </div>
+        </div>
+
+    </section>
+
+    <!---custom js file link-->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
+
+         
+
+
+ 
