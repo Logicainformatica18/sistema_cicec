@@ -65,7 +65,8 @@ class PostController extends Controller
     public function  category(Request $request)
     {
         $posts= Post::orderBy('id','DESC')->where('category','=',$request->category)->get();
-        return view('galaxy_category', compact('posts'));
+        $category=$request->category;
+        return view('galaxy_category', compact('posts','category'));
     }
     /**
      * Show the form for editing the specified resource.

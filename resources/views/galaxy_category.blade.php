@@ -107,7 +107,20 @@
     <section class="tour" id="voluntariados">
         <div class="center-text">
             <p></p>
+            @if ($category=="ambiente")
             <h2>Medio Ambiente</span></h2>
+            @elseif  ($category=="organizaciones")
+            <h2>Organizaciones</span></h2>
+            @elseif  ($category=="servicios")
+            <h2>Servicios Públicos</span></h2>
+            @elseif  ($category=="ie")
+            <h2>IE</span></h2>
+            @elseif  ($category=="clubes")
+            <h2>Clubes de Ayacucho</span></h2>
+            @elseif  ($category=="politica")
+            <h2>Política</span></h2>
+            @endif
+        
 
         </div>
 
