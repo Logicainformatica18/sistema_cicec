@@ -135,7 +135,7 @@
         </div> 
 
         <div class="Culture-img">
-            <img src="galaxy/img/c1.png"> 
+            <img src="galaxy/img/C1.png"> 
         </div>
     </section>
     
