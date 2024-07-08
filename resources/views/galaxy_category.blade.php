@@ -117,7 +117,7 @@
                 <a href="posts/{{ $item->id }}" target="_blank">
                     <div class="box">
                         {{-- <h3><b>{{$item->title}}</b>  </h3>  --}}
-                        <img src="{{ 'imageusers/' . $item->photo }}"style="width:200px">
+                        <img src="{{ '../imageusers/' . $item->photo }}"style="width:200px">
                         {{-- <span>{{$item->description}} </span> --}}
                     </div>
                 </a>
