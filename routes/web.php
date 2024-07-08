@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('galaxy_home');
+});
+Route::get('/publicacion', function () {
+    return view('publication');
 });
 
 //SOLO LOS USUARIOS QUE TENGAN NIVEL DE ADMIN PODRÁN USAR ESTAS RUTAS
@@ -21,6 +24,11 @@ Route::group(['middleware' => ['role:admin']], function () {
 });
 
 Route::resource("blog", App\Http\Controllers\BlogController::class);
+
+Route::resource("publicacion", App\Http\Controllers\PostController::class);
+Route::post('postStore',[App\Http\Controllers\PostController::class, 'store']);
+Route::post('postDestroy',[App\Http\Controllers\PostController::class, 'destroy']);
+Route::get('posts/{id}',[App\Http\Controllers\PostController::class, 'report']);
 // Route::post('blogStore',[App\Http\Controllers\BlogController::class, 'store']);
 // Route::post('blogDestroy',[App\Http\Controllers\BlogController::class, 'destroy']);
 // Route::post('blogEdit',[App\Http\Controllers\BlogController::class, 'edit']);
