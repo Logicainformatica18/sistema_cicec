@@ -52,6 +52,8 @@
                 <option value="politica">Política</option>
                 <option value="ie">IE</option>
                 <option value="sugerencia">Sugerencias</option>
+                <option value="organizaciones">Organizaciones</option>
+                <option value="clubes">Clubes</option>
             </select>
             <input type="hidden" name="id" id="id">
             <p></p>

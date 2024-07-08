@@ -131,7 +131,7 @@
             <h5>CLUBES AYACUCHO</h5>
             <h2>Habilidades sociales e intelectuales en práctica</h2>
             <p>Promovamos la descentralización a través de la accesibilidad a clubes de Literatura, Matemática, Inglés, Ajedrez, etc.</p> 
-            <a href="#" class="btn">Ver: Clubes en Ayacucho</a>
+            <a href="{{url('categoria/clubes')}}" class="btn">Ver: Clubes en Ayacucho</a>
         </div> 
 
         <div class="Culture-img">
@@ -172,7 +172,7 @@
         </div>
 
         <div class="center-btn">
-            <a href="#" class="btn">¿Qué ORGANIZACIONES hay?</a>
+            <a href="{{url('categoria/organizaciones')}}" class="btn">¿Qué ORGANIZACIONES hay?</a>
             </div> 
     </section>
 
