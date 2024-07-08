@@ -42,8 +42,8 @@
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
     </header>
-     <!--- feature section design-->
-     <section class="feature" id="artículos/Flashcards">
+    <!--- feature section design-->
+    <section class="feature" id="artículos/Flashcards">
         <div class="feature-content">
             <div class="row">
                 <div class="row-img">
@@ -83,76 +83,125 @@
 
         </div>
     </section>
+    
+    <div class="center-text">
+        <p></p>
+        <h1>PUBLICACIONES</span></h1>
+        <div class="center-btn">
+            <a href="{{ url('/publicacion') }}"target="_blank" class="btn">Crear publicacion</a>
+        </div>
+    </div>
     <section class="tour" id="voluntariados">
         <div class="center-text">
             <p></p>
-            <h2>PUBLICACIONES</span></h2>
-           
+            <h2>Medio Ambiente</span></h2>
+
         </div>
-        <div class="center-btn">
-            <a href="{{url('/publicacion')}}"target="_blank" class="btn">Crear publicacion</a>
-        </div>
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <div class="tour-content">
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V.jpg') }}">
-            </div>
+            @foreach ($post_ambiente as $item)
+                <a href="posts/{{ $item->id }}" target="_blank">
+                    <div class="box">
+                        {{-- <h3><b>{{$item->title}}</b>  </h3>  --}}
+                        <img src="{{ 'imageusers/' . $item->photo }}"style="width:200px">
+                        {{-- <span>{{$item->description}} </span> --}}
+                    </div>
+                </a>
+            @endforeach
 
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V2.jpg') }}">
-            </div>
 
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V3.jpg') }}">
-            </div>
+        </div>
+    </section>
 
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V4.jpg') }}">
-            </div>
+    <section class="tour" id="voluntariado2">
+        <div class="center-text">
+            <p></p>
+            <h2>Servicio Público</span></h2>
 
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V5.jpg') }}">
-            </div>
-
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V6.jpg') }}">
-            </div>
         </div>
 
+
+        <div class="tour-content">
+            @foreach ($post_servicio_publico as $item)
+                <a href="posts/{{ $item->id }}" target="_blank">
+                    <div class="box">
+                        {{-- <h3><b>{{$item->title}}</b>  </h3>  --}}
+                        <img src="{{ 'imageusers/' . $item->photo }}"style="width:200px">
+                        {{-- <span>{{$item->description}} </span> --}}
+                    </div>
+                </a>
+            @endforeach
+
+
+        </div>
+    </section>
+
+    <!---culture section design-->
+    <section class="Culture" id="clubes_ayacucho">
+        <div class="Culture-text">
+            <h5>CLUBES AYACUCHO</h5>
+            <h2>Habilidades sociales e intelectuales en práctica</h2>
+            <p>Promovamos la descentralización a través de la accesibilidad a clubes de Literatura, Matemática, Inglés,
+                Ajedrez, etc.</p>
+            <a href="#" class="btn">Ver: Clubes en Ayacucho</a>
+        </div>
+
+        <div class="Culture-img">
+            <img src="{{ asset('galaxy/img/c1.png') }}">
+        </div>
+    </section>
+
+
+
+    <section class="tour" id="voluntariados">
+        <div class="center-text">
+            <p></p>
+            <h2>Voluntariados</span></h2>
+
+        </div>
+       
+
+        <div class="tour-content">
+            @foreach ($post_voluntariado as $item)
+                <a href="posts/{{ $item->id }}" target="_blank">
+                    <div class="box">
+                        {{-- <h3><b>{{$item->title}}</b>  </h3>  --}}
+                        <img src="{{ 'imageusers/' . $item->photo }}"style="width:200px">
+                        {{-- <span>{{$item->description}} </span> --}}
+                    </div>
+                </a>
+            @endforeach
+
+
+        </div>
         <div class="center-btn">
-            <a href="#" class="btn">¿Qué ORGANIZACIONES hay?</a>
+            <a href="{{ url('/publicacion') }}"target="_blank" class="btn">¿Qué Organizaciones hay?</a>
+        </div>
+    </section>
+
+
+
+    <section class="tour" id="voluntariados">
+        <div class="center-text">
+            <p></p>
+            <h2>Clubes Ayacucho</span></h2>
+
+        </div>
+       
+
+        <div class="tour-content">
+            @foreach ($post_club as $item)
+                <a href="posts/{{ $item->id }}" target="_blank">
+                    <div class="box">
+                        {{-- <h3><b>{{$item->title}}</b>  </h3>  --}}
+                        <img src="{{ 'imageusers/' . $item->photo }}"style="width:200px">
+                        {{-- <span>{{$item->description}} </span> --}}
+                    </div>
+                </a>
+            @endforeach
+
+
         </div>
     </section>
 
@@ -164,26 +213,20 @@
 
 
 
-
-
-
-
-
-
     <!---home section design-->
     <section class="home" id="home">
-        <div class="home-text">
-            <h5>Libertad</h5>
-            <h1>Universo: viviendo en un<br>un país tercermundista</h1>
-            <p>Art. 2, inciso 4 de la constitución política del Perú:
-                A las libertades de información, opinión, expresión y
-                difusión del pensamiento mediante la palabra oral o escrita
-                o la imagen, por cualquier medio de comunicación social, sin
-                previa autorización ni censura ni impedimento algunos, bajo
-                las responsabilidades de ley. <br>(...) Los derechos de informar
-                y opinar comprenden los de fundar medios
-                de comunicación.</p>
-            <a href="#información" class="btn">¿Qué puedo DESARROLLAR?</a>
+        <div class="tour-content">
+            @foreach ($post_ambiente as $item)
+                <a href="posts/{{ $item->id }}" target="_blank">
+                    <div class="box">
+                        {{-- <h3><b>{{$item->title}}</b>  </h3>  --}}
+                        <img src="{{ 'imageusers/' . $item->photo }}"style="width:200px">
+                        {{-- <span>{{$item->description}} </span> --}}
+                    </div>
+                </a>
+            @endforeach
+
+
         </div>
     </section>
 
@@ -207,57 +250,6 @@
 
 
 
-    <!---culture section design-->
-    <section class="Culture" id="clubes_ayacucho">
-        <div class="Culture-text">
-            <h5>CLUBES AYACUCHO</h5>
-            <h2>Habilidades sociales e intelectuales en práctica</h2>
-            <p>Promovamos la descentralización a través de la accesibilidad a clubes de Literatura, Matemática, Inglés,
-                Ajedrez, etc.</p>
-            <a href="#" class="btn">Ver: Clubes en Ayacucho</a>
-        </div>
-
-        <div class="Culture-img">
-            <img src="{{ asset('galaxy/img/c1.png') }}">
-        </div>
-    </section>
-
-    <!---tour section design-->
-    <section class="tour" id="voluntariados">
-        <div class="center-text">
-            <h2>VOLUNTARIADOS</span></h2>
-        </div>
-
-        <div class="tour-content">
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V.jpg') }}">
-            </div>
-
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V2.jpg') }}">
-            </div>
-
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V3.jpg') }}">
-            </div>
-
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V4.jpg') }}">
-            </div>
-
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V5.jpg') }}">
-            </div>
-
-            <div class="box">
-                <img src="{{ asset('galaxy/img/V6.jpg') }}">
-            </div>
-        </div>
-
-        <div class="center-btn">
-            <a href="#" class="btn">¿Qué ORGANIZACIONES hay?</a>
-        </div>
-    </section>
 
     <!---newsletter section design-->
     <section class="newsletter">

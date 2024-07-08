@@ -16,7 +16,17 @@ class PostController extends Controller
         $post = Post::orderBy('id','DESC')->get();
         return view('post', compact('post'));
     }
-
+    public function home()
+    {
+        $post_ambiente = Post::orderBy('id','DESC')->where('category','=','ambiente')->get();
+        $post_servicio_publico= Post::orderBy('id','DESC')->where('category','=','servicio_publico')->get();
+        $post_organizaciones= Post::orderBy('id','DESC')->where('category','=','organizaciones')->get();
+        $post_voluntariado= Post::orderBy('id','DESC')->where('category','=','voluntariado')->get();
+        $post_club= Post::orderBy('id','DESC')->where('category','=','club')->get();
+        return view('galaxy_home', compact('post_ambiente','post_servicio_publico','post_organizaciones','post_voluntariado','post_club'));
+      
+    }
+  
     /**
      * Show the form for creating a new resource.
      */

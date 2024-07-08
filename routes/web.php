@@ -5,9 +5,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 
-Route::get('/', function () {
-    return view('galaxy_home');
-});
+
+Route::get('/',[App\Http\Controllers\PostController::class, 'home']);
+
+
 Route::get('/publicacion', function () {
     return view('publication');
 });
