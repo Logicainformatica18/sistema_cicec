@@ -119,6 +119,8 @@
             <h2>Clubes de Ayacucho</span></h2>
             @elseif  ($category=="politica")
             <h2>Política</span></h2>
+            @elseif  ($category=="sugerencia")
+            <h2>Sugerencias</span></h2>
             @endif
         
 
