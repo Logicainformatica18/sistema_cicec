@@ -105,6 +105,7 @@
             <th>Id </th>
             <th>URL </th>
             <th>Título </th>
+            <th>Categoría </th>
             <th>Descripción</th>
             <th>Fecha</th>
         </thead>
@@ -130,6 +131,10 @@
                 </td>
                 <td>
                     {{ $posts->title }}
+
+                </td>
+                <td>
+                    {{ $posts->category }}
 
                 </td>
                 <td>
