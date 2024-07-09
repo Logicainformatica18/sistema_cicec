@@ -85,9 +85,12 @@
         Place <em>some</em> <u>text</u> <strong>here</strong>
         <p></p>
       </textarea>
-
+      {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+      onclick="New();$('#post')[0].reset();user.fotografia.src='https://via.placeholder.com/150';">
+      Agregar
+  </button> --}}
             <input type="button" value="Guardar" class="btn btn-success" onclick="postStore()" id="create">
-            {{-- <input type="button" value="Modificar" class="btn btn-danger" onclick="postUpdate();" id="update"> --}}
+            <input type="button" value="Modificar" class="btn btn-danger" onclick="postUpdate();" id="update" disabled>
             {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> --}}
         </form>
     </div>
@@ -110,9 +113,9 @@
         @foreach ($post as $posts)
             <tr>
                 <td>
-                    {{-- <button class="btn bg-warning"
+                    <button class="btn bg-warning"
                 data-toggle="modal" data-target="#exampleModal"
-                onclick="postEdit('{{ $posts->id }}');Up();">Editar</button> --}}
+                onclick="postEdit('{{ $posts->id }}');Up();">Editar</button>
                     <button class="btn bg-danger" onclick="postDestroy('{{ $posts->id }}')">
                         Borrar</button>
 

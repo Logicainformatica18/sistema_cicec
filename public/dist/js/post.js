@@ -67,10 +67,14 @@ function postEdit(id) {
         .then(function(response) {
            
             post.id.value = response.data["id"];
-            post.name.value = response.data["name"];
-            post.email.value = response.data["email"];
+            post.title.value = response.data["title"];
+            post.category.value = response.data["category"];
+            post.description.value = response.data["description"];
+            post.url_invitation.value = response.data["url_invitation"];
+            post.fotografia.src = '../imageusers/'+ response.data["photo"];
 
-
+ // JavaScript para establecer el contenido del textarea
+ document.getElementsByClassName('note-editable')[0].innerHTML = response.data["post"];
 
         })
         .catch(function(response) {
@@ -93,10 +97,11 @@ function postUpdate() {
         })
         .then(function(response) {
             //handle success
-            var contentdiv = document.getElementById("mycontent");
-            contentdiv.innerHTML = response.data;
+        //    var contentdiv = document.getElementById("mycontent");
+        //    contentdiv.innerHTML = response.data;
             
                  alert('Modificado Correctamente');
+                 window.location.reload();
         })
         .catch(function(response) {
             //handle error

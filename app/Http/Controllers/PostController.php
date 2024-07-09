@@ -72,17 +72,36 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Request $request)
     {
-        //
+        $post= Post::find($request->id);
+      return  $post;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post)
+    public function update(Request $request)
     {
-        //
+        $post= Post::find($request->id);
+        $post->title= $request->title;
+        $post->description= $request->description;
+        $post->post= $request->post;
+        $post->category= $request->category;
+        $post->url_invitation= $request->url_invitation;
+
+   
+  
+
+        if ($request->file('photo') != null) {
+           // $table = Post::find($request["id"]);
+            photoDestroy($post->photo, "imageusers");
+            $request->photo = photoStore($request->file('photo'), "imageusers");
+            $post->photo = $request->photo;
+        }
+
+       
+        $post->save();
     }
     public function report(Request $request)
     {
