@@ -45,7 +45,8 @@ class PostController extends Controller
         $post->description= $request->description;
         $post->post= $request->post;
         $post->category= $request->category;
-        
+        $post->url_invitation= $request->url_invitation;
+
         if ($request->file('photo') != null) {
             $request->photo = photoStore($request->file('photo'), "imageusers");
             $post->photo = $request->photo;

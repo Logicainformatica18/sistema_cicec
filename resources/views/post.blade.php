@@ -45,6 +45,8 @@
             <input name="title" type="text" class="form-control">
             Descripción
             <input name="description" type="text" class="form-control">
+            URL Invitación
+            <input name="url_invitation" type="text" class="form-control">
             Categoría
             <select name="category" class="form-control">
                 <option value="ambiente">Medio Ambiente</option>
