@@ -23,12 +23,10 @@ function userStore() {
 }
 function userDestroy(id) {
     if (confirm("Esta seguro de Eliminar?")) {
-        var formData = new FormData(document.getElementById("user"));
-        formData.append("id", id);
+
         axios({
-                method: 'post',
-                url: "userDestroy",
-                data: formData,
+                method: 'delete',
+                url: "userDestroy/"+ id,
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -80,9 +78,13 @@ function userEdit(id) {
 
 function userUpdate() {
     var formData = new FormData(document.getElementById("user"));
+    formData.append("id", user.id);
+    formData.append("name", user.name);
+    formData.append("email", user.email);
+    formData.append("password", user.password);
     axios({
-            method: 'post',
-            url: 'userUpdate',
+            method: 'put',
+            url: 'userUpdate/'+user.id,
             data: formData,
             headers: {
                 'Content-Type': 'multipart/form-data'

@@ -13,10 +13,11 @@ Route::get('/', function () {
 Route::group(['middleware' => ['role:admin']], function () {
 
     Route::resource("usuarios", App\Http\Controllers\UserController::class);
-    Route::post('userUpdate',[App\Http\Controllers\UserController::class, 'update']);
     Route::post('userStore',[App\Http\Controllers\UserController::class, 'store']);
-    Route::post('userDestroy',[App\Http\Controllers\UserController::class, 'destroy']);
     Route::post('userEdit',[App\Http\Controllers\UserController::class, 'edit']);
+
+    Route::put('userUpdate/{id}',[App\Http\Controllers\UserController::class, 'update']);
+    Route::delete('userDestroy/{id}',[App\Http\Controllers\UserController::class, 'destroy']);
   
 });
 
