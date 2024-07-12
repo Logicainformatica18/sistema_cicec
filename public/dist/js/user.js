@@ -78,13 +78,15 @@ function userEdit(id) {
 
 function userUpdate() {
     var formData = new FormData(document.getElementById("user"));
-    formData.append("id", user.id);
-    formData.append("name", user.name);
-    formData.append("email", user.email);
-    formData.append("password", user.password);
+    formData.append("id", user.id.value);
+    formData.append("name", user.name.value);
+    formData.append("email", user.email.value);
+    formData.append("password", user.password.value);
+
+  
     axios({
-            method: 'put',
-            url: 'userUpdate/'+user.id,
+            method: 'post',
+            url: 'userUpdate/'+user.id.value,
             data: formData,
             headers: {
                 'Content-Type': 'multipart/form-data'

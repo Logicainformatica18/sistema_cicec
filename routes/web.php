@@ -16,7 +16,7 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::post('userStore',[App\Http\Controllers\UserController::class, 'store']);
     Route::post('userEdit',[App\Http\Controllers\UserController::class, 'edit']);
 
-    Route::put('userUpdate/{id}',[App\Http\Controllers\UserController::class, 'update']);
+    Route::post('userUpdate/{id}',[App\Http\Controllers\UserController::class, 'update']);
     Route::delete('userDestroy/{id}',[App\Http\Controllers\UserController::class, 'destroy']);
   
 });

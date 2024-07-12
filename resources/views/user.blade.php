@@ -21,7 +21,7 @@
             <div class="modal-body">
 
 
-                <form action=""method="post" role="form" id="user" name="form">
+                <form action=""method="post" role="form" id="user" name="user">
                  <input type="hidden" name="id">
                     {{ csrf_field() }}
                     Nombres
