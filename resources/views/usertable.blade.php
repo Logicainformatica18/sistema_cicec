@@ -6,12 +6,17 @@
         <th>name </th>
         <th>email </th>
         <th>Blog </th>
+        <th>Role</th>
     </thead>
+
 
 
     @foreach ($user as $users)
         <tr>
             <td>
+              <a target="_blank" href="{{url('certificado')}}" lang="" class="btn bg-success">
+               Certificado</a>
+
                 <button class="btn bg-warning"
                 data-toggle="modal" data-target="#exampleModal"
                 onclick="userEdit('{{ $users->id }}');Up();">Editar</button>
@@ -39,6 +44,9 @@
                 @endforeach
                
 
+            </td>
+            <td>
+                {{ $users->model_has_role}}
             </td>
         </tr>
     @endforeach

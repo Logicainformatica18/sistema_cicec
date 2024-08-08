@@ -67,6 +67,9 @@ return [
         ],
 
         Spatie\Permission\PermissionServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
+    
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

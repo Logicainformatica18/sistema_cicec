@@ -21,6 +21,8 @@ Route::group(['middleware' => ['role:admin']], function () {
   
 });
 
+Route::get('certificado', [App\Http\Controllers\CertificateController::class, 'index']);
+
 Route::resource("blog", App\Http\Controllers\BlogController::class);
 // Route::post('blogStore',[App\Http\Controllers\BlogController::class, 'store']);
 // Route::post('blogDestroy',[App\Http\Controllers\BlogController::class, 'destroy']);

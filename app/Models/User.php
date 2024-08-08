@@ -10,7 +10,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 use App\Models\Blog;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -55,4 +55,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Blog::class);
     }
+    
+    // public function roles():  BelongsToMany
+    // {
+    //     return $this->belongsToMany(Roles::class);
+    // }
+    public function model_has_role()
+     {
+         return $this->hasMany('App\Models\User', 'Spatie\Permission\Role','model_id');
+     }
 }
